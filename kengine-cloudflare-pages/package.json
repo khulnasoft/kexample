@@ -1,0 +1,15 @@
+{
+  "name": "kengine-cloudflare-pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler pages dev . --binding IS_LOCAL=1",
+    "deploy": "wrangler pages deploy ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@khulnasoft/edge-logger": "^0.2.1"
+  }
+}
