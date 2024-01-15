@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@khulnasoft/node-opentelemetry": "^0.2.11",
-    "@clerk/nextjs": "^4.25.5",
+    "@clerk/nextjs": "^4.29.3",
     "@opentelemetry/api": "^1.6.0",
     "@opentelemetry/instrumentation-fetch": "^0.44.0",
     "@opentelemetry/instrumentation-http": "^0.44.0",
