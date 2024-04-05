@@ -1,6 +1,6 @@
-import type { KengineLogger } from '@khulnasoft/edge-logger';
+import type { BaselimeLogger } from '@baselime/edge-logger';
 
-export async function load({ logger }: { logger: KengineLogger }) {
+export async function load({ logger }: { logger: BaselimeLogger }) {
    
     logger.info("Hello from page.server.ts")
 

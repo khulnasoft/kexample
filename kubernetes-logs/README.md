@@ -1,6 +1,6 @@
-# Kubernetes Logs to Kengine
+# Kubernetes Logs to Baselime
  
-This example shows how to send Kubernetes logs to Kengine using Fluentd DaemonSet.
+This example shows how to send Kubernetes logs to Baselime using Fluentd DaemonSet.
 
-## How to use Kengine with Docker?
-Please read the [documentation](https://kengine.khulnasoft.com/docs/sending-data/kubernetes/) to understand the process in details.
+## How to use Baselime with Docker?
+Please read the [documentation](https://baselime.io/docs/sending-data/kubernetes/) to understand the process in details.

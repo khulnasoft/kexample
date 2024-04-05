@@ -7,7 +7,7 @@ declare global {
 		// interface PageData {}
 		interface Platform {
 			env: {
-				KENGINE_API_KEY?: string
+				BASELIME_API_KEY?: string
 			}
 			context: {
 				waitUntil(promise: Promise<any>): void;

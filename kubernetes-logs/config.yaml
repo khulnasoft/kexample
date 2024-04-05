@@ -17,7 +17,7 @@ data:
     </source>
     <match>
       @type http
-      endpoint https://events.kengine.khulnasoft.com/v1/kubernetes-logs
+      endpoint https://events.baselime.io/v1/kubernetes-logs
       headers {"x-api-key":"YOUR_API_KEY"}
       open_timeout 2
       <format>

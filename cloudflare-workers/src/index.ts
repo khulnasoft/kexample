@@ -8,7 +8,7 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import { KengineLogger } from './kengine'
+import { BaselimeLogger } from './baselime'
 
 export interface Env {
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
@@ -26,25 +26,25 @@ export interface Env {
 	// Example binding to a Queue. Learn more at https://developers.cloudflare.com/queues/javascript-apis/
 	// MY_QUEUE: Queue;
 
-	KENGINE_API_KEY: string
+	BASELIME_API_KEY: string
 }
 
 export type AppContext = {
 	request: Request
 	env: Env
 	ctx: ExecutionContext
-	logger: KengineLogger
+	logger: BaselimeLogger
 }
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		
-		const logger = new KengineLogger({
+		const logger = new BaselimeLogger({
 			ctx,
-			kengineApiKey: env.KENGINE_API_KEY,
-			kengineDataset: 'example-dataset',
-			kengineService: 'example-service',
-			kengineNamespace: 'example-namespace',
+			baselimeApiKey: env.BASELIME_API_KEY,
+			baselimeDataset: 'example-dataset',
+			baselimeService: 'example-service',
+			baselimeNamespace: 'example-namespace',
 			requestId: crypto.randomUUID(), // optional
 			flushAfterLogs: 10, // optional
 			flushAfterMs: 10_000, // optional

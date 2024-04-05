@@ -1,9 +1,9 @@
-# Docker Logs to Kengine
+# Docker Logs to Baselime
  
-This example shows how to send Docker logs to Kengine using Fluentd.
+This example shows how to send Docker logs to Baselime using Fluentd.
 
-## How to use Kengine with Docker?
-Please read the [documentation](https://kengine.khulnasoft.com/docs/sending-data/docker/) to understand the process in details.
+## How to use Baselime with Docker?
+Please read the [documentation](https://baselime.io/docs/sending-data/docker/) to understand the process in details.
 
 ## Using Docker Compose
 If manage your containers with Docker Compose, you can use the provided `docker-compose.yml`

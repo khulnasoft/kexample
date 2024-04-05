@@ -22,7 +22,7 @@ export default class StepFunctions extends Construct {
         this.snsTopic = kinesisScalingSnsTopic;
 
         new ssm.StringParameter(this, "kinesis-autoscaling-topic-arn", {
-            parameterName: `/kengine/kinesis-auto-scaling/sns-topic-arn/${id}`,
+            parameterName: `/baselime/kinesis-auto-scaling/sns-topic-arn/${id}`,
             stringValue: kinesisScalingSnsTopic.topicArn,
             description: "Contains parameters required for scaling kinesis stream",
             type: ssm.ParameterType.STRING,
