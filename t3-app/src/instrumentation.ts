@@ -1,24 +1,24 @@
 // instrumentation.ts
 
-import { PrismaInstrumentation } from '@prisma/instrumentation';
-import { WinstonInstrumentation} from '@opentelemetry/instrumentation-winston';
+import { PrismaInstrumentation } from '@prisma/instrumentation'
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { KengineSDK, VercelPlugin, BetterHttpInstrumentation, StripePlugin } = await import('@khulnasoft/node-opentelemetry');
+    const {
+      BaselimeSDK,
+      VercelPlugin,
+      BetterHttpInstrumentation,
+      StripePlugin,
+    } = await import('@baselime/node-opentelemetry')
 
-    const sdk = new KengineSDK({
+    const sdk = new BaselimeSDK({
       serverless: true,
       instrumentations: [
-        new BetterHttpInstrumentation({ 
-          plugins: [
-            new StripePlugin(),
-            new VercelPlugin()
-          ]
+        new BetterHttpInstrumentation({
+          plugins: [new StripePlugin(), new VercelPlugin()],
         }),
         new PrismaInstrumentation(),
-        new WinstonInstrumentation(),
-      ]
-    });
-    sdk.start();
+      ],
+    })
+    sdk.start()
   }
 }

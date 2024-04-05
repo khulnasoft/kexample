@@ -1,6 +1,4 @@
-
-import { instrument, instrumentDO } from '@microlabs/otel-cf-workers'
-
+import { instrument, instrumentDO } from '@microlabs/otel-cf-workers';
 
 /**
  * Worker
@@ -57,17 +55,16 @@ class CounterDO {
 	}
 }
 
-
-const config = (env) => {
-	console.log(env)
+const config = env => {
+	console.log(env);
 	return {
 		exporter: {
 			url: 'https://otel.baselime.io/v1',
 			headers: { 'x-api-key': env.BASELIME_API_KEY },
 		},
 		service: { name: 'workers-durable-objects' },
-	}
-}
+	};
+};
 
 export const Counter = instrumentDO(CounterDO, config);
-export default instrument(handler, config)
+export default instrument(handler, config);

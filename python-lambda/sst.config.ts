@@ -1,21 +1,20 @@
-import { SSTConfig } from "sst";
-import { API } from "./stacks/MyStack";
-import { Tags } from "aws-cdk-lib"
+import { SSTConfig } from 'sst'
+import { API } from './stacks/MyStack'
+import { Tags } from 'aws-cdk-lib'
 
 export default {
   config(_input) {
     return {
-      name: "python-lambda",
-      region: "eu-west-2",
-    };
+      name: 'python-lambda',
+      region: 'eu-west-2',
+    }
   },
   stacks(app) {
     app.setDefaultFunctionProps({
-      runtime: "python3.10",
-      tracing: "pass_through",
+      runtime: 'python3.10',
+      tracing: 'pass_through',
     })
-    app.stack(API);
-    Tags.of(app).add("baselime:tracing", `true`);
-  }
-} satisfies SSTConfig;
-
+    app.stack(API)
+    Tags.of(app).add('baselime:tracing', `true`)
+  },
+} satisfies SSTConfig

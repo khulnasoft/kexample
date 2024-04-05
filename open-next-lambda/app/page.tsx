@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 export default function Home() {
   const headersList = headers()
   const referer = headersList.get('referer')
-  console.log(JSON.stringify({ referer, headersList }));
+  console.log(JSON.stringify({ referer, headersList }))
   return (
     <main className={styles.main}>
       <div className={styles.description}>

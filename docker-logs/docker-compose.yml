@@ -1,9 +1,9 @@
-version: "3.7"
+version: '3.7'
 services:
   logger:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     depends_on:
       - fluentd
     logging:
@@ -11,10 +11,10 @@ services:
       options:
         fluentd-address: localhost:24224
         tag: docker.{{.Name}}
-        labels: "io.baselime.service,io.baselime.namespace"
+        labels: 'io.baselime.service,io.baselime.namespace'
     labels:
-      io.baselime.service: "my_service"
-      io.baselime.namespace: "my_namespace"
+      io.baselime.service: 'my_service'
+      io.baselime.namespace: 'my_namespace'
   fluentd:
     image: fluentd:latest
     volumes:

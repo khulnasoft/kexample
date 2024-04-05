@@ -1,11 +1,10 @@
-
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { KengineSDK } = await import('@khulnasoft/node-opentelemetry');
+    const { BaselimeSDK } = await import('@baselime/node-opentelemetry')
 
-    const sdk = new KengineSDK({
-      serverless: true
-    });
-    sdk.start();
+    const sdk = new BaselimeSDK({
+      serverless: true,
+    })
+    sdk.start()
   }
 }

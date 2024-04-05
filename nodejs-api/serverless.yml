@@ -9,7 +9,7 @@ provider:
   runtime: nodejs12.x
   memorySize: 128
   stage: ${opt:stage}
-  region: "${self:custom.region}"
+  region: '${self:custom.region}'
   logRetentionInDays: 1
   versionFunctions: false
   iam:
@@ -24,13 +24,13 @@ provider:
             - dynamodb:DescribeTable
           Resource:
             - Fn::GetAtt:
-              - ExamplesProjectionTable
-              - Arn 
+                - ExamplesProjectionTable
+                - Arn
 
   environment:
     STAGE: ${opt:stage}
-    REGION: "${self:custom.region}"
-    PROJECTION_TABLE: "${self:custom.table}"
+    REGION: '${self:custom.region}'
+    PROJECTION_TABLE: '${self:custom.table}'
     NODE_OPTIONS: --require tracing
 
 functions:
@@ -53,7 +53,7 @@ resources:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Delete
       Properties:
-        TableName: "${self:custom.table}"
+        TableName: '${self:custom.table}'
         BillingMode: PAY_PER_REQUEST
         AttributeDefinitions:
           - AttributeName: partitionKey

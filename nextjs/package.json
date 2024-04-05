@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@khulnasoft/node-opentelemetry": "^0.2.1",
+    "@baselime/node-opentelemetry": "^0.2.1",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18"

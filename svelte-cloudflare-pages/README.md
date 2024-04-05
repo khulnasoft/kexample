@@ -17,7 +17,7 @@ export async function load({ platform }: { platform: App.Platform }) {
         apiKey: platform.env.BASELIME_API_KEY,
         ctx: platform.context
     });
-   
+
     logger.info("Hello from page.server.ts")
 
     platform.context.waitUntil(logger.flush())
@@ -27,6 +27,7 @@ export async function load({ platform }: { platform: App.Platform }) {
 }
 
 ```
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:

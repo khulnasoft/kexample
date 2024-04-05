@@ -1,7 +1,9 @@
 # Kinesis Autoscaling
+
 This directory contains the cdk constructs used to auto-scale kinesis streams.
 
 ## Flow
+
 ```mermaid
 flowchart TD
     SNS(Scaling SNS)
@@ -18,7 +20,7 @@ flowchart TD
 
     subgraph State Machine
     subgraph Scaling Lambda
-    
+
     Lambda2 --> f{Any Alarms On?}
     f -->|Scale Up Alarm| s(Scale Kinesis Up)
     f -->|Scale Down Alarm| s(Scale Kinesis Down)

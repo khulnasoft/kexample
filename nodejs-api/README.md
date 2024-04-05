@@ -17,7 +17,7 @@ This is a simple API to manage blog posts with 2 end-points:
 
 - `GET /{id}`: Get a single blog post.
 
-To illustrate how Kengine works, this app makes a few external calls:
+To illustrate how Baselime works, this app makes a few external calls:
 
 - to `DyanmoDB` to save and retrieve blog posts.
 - to `https://jsonplaceholder.typicode.com` to add illustration images to blog posts.
@@ -27,14 +27,14 @@ To illustrate how Kengine works, this app makes a few external calls:
 This app illustrates how to:
 
 - Add auto-instrumentation to a AWS Lambda app with OpenTelemetry
-- Send telemetry data to Kengine
+- Send telemetry data to Baselime
 - Add custom attributes and events to spans
 - Create new spans
 - Capture exceptions
 
 ## Setup
 
-Get your `KENGINE_API_KEY` and add it to your Lambda function env variables.
+Get your `BASELIME_API_KEY` and add it to your Lambda function env variables.
 
 Deploy the app
 
@@ -53,9 +53,9 @@ curl $LAMBDA_URL  \
 Retrieve a blog post
 
 ```bash #
-curl $LAMBDA_URL 
+curl $LAMBDA_URL
 ```
 
 ## Result
 
-Visit the Kengine Web UI to visualise your logs, metrics and traces.
+Visit the Baselime Web UI to visualise your logs, metrics and traces.

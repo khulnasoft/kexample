@@ -1,15 +1,15 @@
-import { z } from "zod";
+import { z } from 'zod'
 
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from '~/server/api/trpc'
 
 export const postRouter = createTRPCRouter({
   hello: publicProcedure
     .input(z.object({ text: z.string() }))
     .query(({ input }) => {
-      console.log("Hello from kengine")
+      console.log('Hello from baselime')
       return {
         greeting: `Hello ${input.text}`,
-      };
+      }
     }),
 
   create: publicProcedure
@@ -17,7 +17,7 @@ export const postRouter = createTRPCRouter({
     .mutation(async ({ ctx, input }) => {
       // simulate a slow db call
 
-      if (input.name === "error") {
+      if (input.name === 'error') {
         throw Error('sad')
       }
 
@@ -25,13 +25,13 @@ export const postRouter = createTRPCRouter({
         data: {
           name: input.name,
         },
-      });
+      })
     }),
 
   getLatest: publicProcedure.query(({ ctx }) => {
-    console.log(JSON.stringify({ message: "Fetching Latest Post" }))
+    console.log(JSON.stringify({ message: 'Fetching Latest Post' }))
     return ctx.db.post.findFirst({
-      orderBy: { createdAt: "desc" },
-    });
+      orderBy: { createdAt: 'desc' },
+    })
   }),
-});
+})
